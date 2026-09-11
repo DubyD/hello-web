@@ -1,14 +1,25 @@
 import express from "express";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 app.get("/", (req, res) => {
-  res.send("Hello, web!");
+  res.send(`Salutations from the webway`);
 });
 
 app.get("/about", (req, res) => {
-  res.send("This is a web programming course");
+  res.send(
+    `Currently I am learning how to create a space that can \nbe accessed from a URL. This small function will help with creating more \ncomplex organizations for a fully functional web application.`,
+  );
+});
+
+app.get("/current-classes", (req, res) => {
+  res.send(`Currently enrolled in 5 courses:
+  -CS326 Web Programming
+  -History 151 US history since 1876
+  -CS453 Computer Networks
+  -CS305 Social Issues in computing
+  -CS311 Intro to Algorithms`);
 });
 
 app.get("/status", (req, res) => {
